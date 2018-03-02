@@ -131,7 +131,7 @@ tags: http,httsp,http2.0,spdy
 
 ##12. HTTP2.0的升级改造
 
-	**对比HTTPS的升级改造，HTTP2.0或许会稍微简单一些，你可能需要关注以下问题：**
+ **对比HTTPS的升级改造，HTTP2.0或许会稍微简单一些，你可能需要关注以下问题：**
 
 1.  前文说了HTTP2.0其实可以支持非HTTPS的，但是现在主流的浏览器像chrome，firefox表示还是只支持基于 TLS 部署的HTTP2.0协议，所以要想升级成HTTP2.0还是先升级HTTPS为好。
 2.  当你的网站已经升级HTTPS之后，那么升级HTTP2.0就简单很多，如果你使用NGINX，只要在配置文件中启动相应的协议就可以了，可以参考[NGINX白皮书](https://www.nginx.com/wp-content/uploads/2015/09/NGINX_HTTP2_White_Paper_v4.pdf)，[NGINX配置HTTP2.0官方指南](https://www.nginx.com/blog/nginx-1-9-5/)。
