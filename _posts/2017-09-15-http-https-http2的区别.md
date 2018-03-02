@@ -45,10 +45,9 @@ tags: http,httsp,http2.0,spdy
 
 	[![](http://tenny.qiniudn.com/host1.png)](http://tenny.qiniudn.com/host1.png)
 
-## 
 	[![](http://tenny.qiniudn.com/http11.png)](http://tenny.qiniudn.com/http11.png)
 
-	**区别用一张图来体现：**
+	区别用一张图来体现：
 
 	[![](http://tenny.qiniudn.com/DIF12.png)](http://tenny.qiniudn.com/DIF12.png)
 
