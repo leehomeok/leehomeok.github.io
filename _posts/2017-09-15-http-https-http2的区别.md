@@ -20,7 +20,7 @@ tags: http,httsp,http2.0,spdy
   早在HTTP建立之初，主要就是为了将超文本标记语言(HTML)文档从Web服务器传送到客户端的浏览器。也是说对于前端来说，我们所写的HTML页面将要放在我们的web服务器上，用户端通过浏览器访问url地址来获取网页的显示内容，但是到了WEB2.0以来，我们的页面变得复杂，不仅仅单纯的是一些简单的文字和图片，同时我们的HTML页面有了CSS，Javascript，来丰富我们的页面展示，当ajax的出现，我们又多了一种向服务器端获取数据的方法，这些其实都是基于HTTP协议的。同样到了移动互联网时代，我们页面可以跑在手机端浏览器里面，但是和PC相比，手机端的网络情况更加复杂，这使得我们开始了不得不对HTTP进行深入理解并不断优化过程中。
 
      
-    [![](http://tenny.qiniudn.com/timeline.png)](http://tenny.qiniudn.com/timeline.png)
+  [![](http://tenny.qiniudn.com/timeline.png)](http://tenny.qiniudn.com/timeline.png)
 
 
 ##3. HTTP的基本优化
