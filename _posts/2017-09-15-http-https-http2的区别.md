@@ -10,15 +10,17 @@ tags: http,httsp,http2.0,spdy
 
 作为一个经常和web打交道的程序员，了解这些协议是必须的，本文就向大家介绍一下这些协议的区别和基本概念，文中可能不局限于前端知识，还包括一些运维，协议方面的知识，希望能给读者带来一些收获，如有不对之处还请指出。
 
-##**1.web始祖HTTP**
+##1.web始祖HTTP
 
 	全称：超文本传输协议(HyperText Transfer Protocol) 伴随着计算机网络和浏览器的诞生，HTTP1.0也随之而来，处于计算机网络中的应用层，HTTP是建立在TCP协议之上，所以HTTP协议的瓶颈及其优化技巧都是基于TCP协议本身的特性，例如tcp建立连接的3次握手和断开连接的4次挥手以及每次建立连接带来的RTT延迟时间。
 
-##**2. HTTP与现代化浏览器**
+##2. HTTP与现代化浏览器
 
-	早在HTTP建立之初，主要就是为了将超文本标记语言(HTML)文档从Web服务器传送到客户端的浏览器。也是说对于前端来说，我们所写的HTML页面将要放在我们的web服务器上，用户端通过浏览器访问url地址来获取网页的显示内容，但是到了WEB2.0以来，我们的页面变得复杂，不仅仅单纯的是一些简单的文字和图片，同时我们的HTML页面有了CSS，Javascript，来丰富我们的页面展示，当ajax的出现，我们又多了一种向服务器端获取数据的方法，这些其实都是基于HTTP协议的。同样到了移动互联网时代，我们页面可以跑在手机端浏览器里面，但是和PC相比，手机端的网络情况更加复杂，这使得我们开始了不得不对HTTP进行深入理解并不断优化过程中。 [![](http://tenny.qiniudn.com/timeline.png)](http://tenny.qiniudn.com/timeline.png)
+	早在HTTP建立之初，主要就是为了将超文本标记语言(HTML)文档从Web服务器传送到客户端的浏览器。也是说对于前端来说，我们所写的HTML页面将要放在我们的web服务器上，用户端通过浏览器访问url地址来获取网页的显示内容，但是到了WEB2.0以来，我们的页面变得复杂，不仅仅单纯的是一些简单的文字和图片，同时我们的HTML页面有了CSS，Javascript，来丰富我们的页面展示，当ajax的出现，我们又多了一种向服务器端获取数据的方法，这些其实都是基于HTTP协议的。同样到了移动互联网时代，我们页面可以跑在手机端浏览器里面，但是和PC相比，手机端的网络情况更加复杂，这使得我们开始了不得不对HTTP进行深入理解并不断优化过程中。
+     
+    [![](http://tenny.qiniudn.com/timeline.png)](http://tenny.qiniudn.com/timeline.png)
 
-##**3. HTTP的基本优化**
+##3. HTTP的基本优化
 
 	影响一个HTTP网络请求的因素主要有两个：带宽和延迟。
 
@@ -31,7 +33,7 @@ tags: http,httsp,http2.0,spdy
 
 	[![](http://tenny.qiniudn.com/3woshou.png)](http://tenny.qiniudn.com/3woshou.png)
 
-##**4. HTTP1.0和HTTP1.1的一些区别**
+##4. HTTP1.0和HTTP1.1的一些区别
 
 	HTTP1.0最早在网页中使用是在1996年，那个时候只是使用一些较为简单的网页上和网络请求上，而HTTP1.1则在1999年才开始广泛应用于现在的各大浏览器网络请求中，同时HTTP1.1也是当前使用最为广泛的HTTP协议。 **主要区别主要体现在：**
 
@@ -50,18 +52,18 @@ tags: http,httsp,http2.0,spdy
 
 	[![](http://tenny.qiniudn.com/DIF12.png)](http://tenny.qiniudn.com/DIF12.png)
 
-##**5. HTTP1.0和1.1现存的一些问题**
+##5. HTTP1.0和1.1现存的一些问题
 
 1.  上面提到过的，HTTP1.x在传输数据时，每次都需要重新建立连接，无疑增加了大量的延迟时间，特别是在移动端更为突出。
 2.  HTTP1.x在传输数据时，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份，这在一定程度上无法保证数据的安全性。
 3.  HTTP1.x在使用时，header里携带的内容过大，在一定程度上增加了传输的成本，并且每次请求header基本不怎么变化，尤其在移动端增加用户流量。
 4.  虽然HTTP1.x支持了keep-alive，来弥补多次创建连接产生的延迟，但是keep-alive使用多了同样会给服务端带来大量的性能压力，并且对于单个文件被不断请求的服务(例如图片存放网站)，keep-alive可能会极大的影响性能，因为它在文件被请求之后还保持了不必要的连接很长时间。
 
-##**6. HTTPS应声而出**
+##6. HTTPS应声而出
 
 	为了解决以上问题，网景在1994年创建了HTTPS，并应用在网景导航者浏览器中。 最初，HTTPS是与[SSL](https://zh.wikipedia.org/wiki/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E5%8D%94%E8%AD%B0)一起使用的；在SSL逐渐演变到[TLS](https://zh.wikipedia.org/wiki/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E5%8D%94%E8%AD%B0#TLS_1.0)时（其实两个是一个东西，只是名字不同而已），最新的HTTPS也由在2000年五月公布的RFC 2818正式确定下来。简单来说，HTTPS就是安全版的HTTP，并且由于当今时代对安全性要求更高，chrome和firefox都大力支持网站使用HTTPS，苹果也在ios 10系统中强制app使用HTTPS来传输数据，由此可见HTTPS势在必行。 
 
-##**7. HTTPS与HTTP的一些区别**
+##7. HTTPS与HTTP的一些区别
 
 1.  HTTPS协议需要到CA申请证书，一般免费证书很少，需要交费。
 2.  HTTP协议运行在TCP之上，所有传输的内容都是明文，HTTPS运行在SSL/TLS之上，SSL/TLS运行在TCP之上，所有传输的内容都经过加密的。
@@ -70,7 +72,7 @@ tags: http,httsp,http2.0,spdy
 
 	[![](http://tenny.qiniudn.com/HTTPQUBIE2.png)](http://tenny.qiniudn.com/HTTPQUBIE2.png)
 
-##**8. HTTPS改造**
+##8. HTTPS改造
 
 	**如果一个网站要全站由HTTP替换成HTTPS，可能需要关注以下几点：**
 
@@ -81,7 +83,7 @@ tags: http,httsp,http2.0,spdy
 
 	推荐一则[淘宝网改造HTTPS](http://velocity.oreilly.com.cn/2015/ppts/lizhenyu.pdf)的文章。 
 
-##**9. 使用SPDY加快你的网站速度**
+##9. 使用SPDY加快你的网站速度
 
 	2012年google如一声惊雷提出了SPDY的方案，大家才开始从正面看待和解决老版本HTTP协议本身的问题，SPDY可以说是综合了HTTPS和HTTP两者有点于一体的传输协议，主要解决：
 
@@ -100,14 +102,14 @@ tags: http,httsp,http2.0,spdy
 	[![](http://tenny.qiniudn.com/sodyuse.png)](http://tenny.qiniudn.com/sodyuse.png) 
 
 
-##**10. HTTP2.0的前世今生**
+##10. HTTP2.0的前世今生
 
 	顾名思义有了HTTP1.x，那么HTTP2.0也就顺理成章的出现了。HTTP2.0可以说是SPDY的升级版（其实原本也是基于SPDY设计的），但是，HTTP2.0跟 SPDY 仍有不同的地方，主要是以下两点：
 
 *   HTTP2.0支持明文 HTTP 传输，而 SPDY 强制使用 HTTPS
 *   HTTP2.0 消息头的压缩算法采用 [HPACK](http://http2.github.io/http2-spec/compression.html)，而非 SPDY 采用的 [DEFLATE](http://zh.wikipedia.org/wiki/DEFLATE)
 
-##**11. HTTP2.0的新特性**
+##11. HTTP2.0的新特性
 
 *   **新的二进制格式**（Binary Format），HTTP1.x的解析是基于文本。基于文本协议的格式解析存在天然缺陷，文本的表现形式有多样性，要做到健壮性考虑的场景必然很多，二进制则不同，只认0和1的组合。基于这种考虑HTTP2.0的协议解析决定采用二进制格式，实现方便且健壮。
 *   **多路复用**（MultiPlexing），即连接共享，即每一个request都是是用作连接共享机制的。一个request对应一个id，这样一个连接上可以有多个request，每个连接的request可以随机的混杂在一起，接收方可以根据request的 id将request再归属到各自不同的服务端请求里面。**多路复用原理图**：
@@ -125,7 +127,7 @@ tags: http,httsp,http2.0,spdy
 
 	[![](http://tenny.qiniudn.com/diff332.png)](http://tenny.qiniudn.com/diff332.png)
 
-##**12. HTTP2.0的升级改造**
+##12. HTTP2.0的升级改造
 
 	**对比HTTPS的升级改造，HTTP2.0或许会稍微简单一些，你可能需要关注以下问题：**
 
