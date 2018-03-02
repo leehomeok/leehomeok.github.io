@@ -8,22 +8,15 @@ tags: http,httsp,http2.0,spdy
 ---
 
 
-
 作为一个经常和web打交道的程序员，了解这些协议是必须的，本文就向大家介绍一下这些协议的区别和基本概念，文中可能不局限于前端知识，还包括一些运维，协议方面的知识，希望能给读者带来一些收获，如有不对之处还请指出。
 
 ##**1.web始祖HTTP**
 
 	全称：超文本传输协议(HyperText Transfer Protocol) 伴随着计算机网络和浏览器的诞生，HTTP1.0也随之而来，处于计算机网络中的应用层，HTTP是建立在TCP协议之上，所以HTTP协议的瓶颈及其优化技巧都是基于TCP协议本身的特性，例如tcp建立连接的3次握手和断开连接的4次挥手以及每次建立连接带来的RTT延迟时间。
 
-	<span id="more-11130"></span>
-
-	
-
 ##**2. HTTP与现代化浏览器**
 
 	早在HTTP建立之初，主要就是为了将超文本标记语言(HTML)文档从Web服务器传送到客户端的浏览器。也是说对于前端来说，我们所写的HTML页面将要放在我们的web服务器上，用户端通过浏览器访问url地址来获取网页的显示内容，但是到了WEB2.0以来，我们的页面变得复杂，不仅仅单纯的是一些简单的文字和图片，同时我们的HTML页面有了CSS，Javascript，来丰富我们的页面展示，当ajax的出现，我们又多了一种向服务器端获取数据的方法，这些其实都是基于HTTP协议的。同样到了移动互联网时代，我们页面可以跑在手机端浏览器里面，但是和PC相比，手机端的网络情况更加复杂，这使得我们开始了不得不对HTTP进行深入理解并不断优化过程中。 [![](http://tenny.qiniudn.com/timeline.png)](http://tenny.qiniudn.com/timeline.png)
-
-	
 
 ##**3. HTTP的基本优化**
 
@@ -153,8 +146,6 @@ tags: http,httsp,http2.0,spdy
 *   [https://www.nginx.com/blog/7-tips-for-faster-http2-performance/](https://www.nginx.com/blog/7-tips-for-faster-http2-performance/)
 *   [https://www.gitbook.com/book/ye11ow/http2-explained/details](https://www.gitbook.com/book/ye11ow/http2-explained/details)
 *   [http://op.baidu.com/2015/04/https-s01a01/](http://op.baidu.com/2015/04/https-s01a01/)
-
-	
 
 	好书推荐[《](http://www.ituring.com.cn/book/1632)[HTTPS权威指南：在服务器和Web应用上部署SSL/TLS和PKI](http://www.ituring.com.cn/book/1734)[》](http://www.ituring.com.cn/book/1632)
 
